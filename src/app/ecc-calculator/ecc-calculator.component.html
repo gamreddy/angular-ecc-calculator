@@ -1,0 +1,19 @@
+<section class="main" *ngIf="colorCodes.length > 0">
+
+  <app-band-selector-item [title]="'bandAColor'" [colorCodes]="colorCodes" (selectColor)="onSelectColorComplete($event)"></app-band-selector-item>
+  <app-band-selector-item [title]="'bandBColor'" [colorCodes]="colorCodes" (selectColor)="onSelectColorComplete($event)"></app-band-selector-item>
+  <app-band-selector-item [title]="'bandCColor'" [colorCodes]="colorCodes" (selectColor)="onSelectColorComplete($event)"></app-band-selector-item>
+  <app-band-selector-item [title]="'bandDColor'" [colorCodes]="colorCodes" (selectColor)="onSelectColorComplete($event)"></app-band-selector-item>
+  <!-- {{selectedColorA.name}}  {{selectedColorB.name}}  {{selectedColorC.name}}  {{selectedColorD.name}} -->
+  <button (click)="calculate()">CALCULATE</button>
+  <br/>
+  <span *ngIf="minResistance > 0"> Resistance:
+    <span *ngIf="minResistance <  maxResistance">
+      {{minResistance}} to {{maxResistance}}
+    </span>
+    <span *ngIf="minResistance ==  maxResistance">
+      {{minResistance}}
+    </span>
+  </span>
+
+</section>
